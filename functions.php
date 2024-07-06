@@ -1,24 +1,23 @@
 <?php
 
 
+if(!function_exists('mythemefucntions')){
 
-if(!function_exists('mytheeme')){
-    function mytheeme(){
-        add_theme_support( 'post-formats',  array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
-        add_theme_support( 'post-thumbnails');
-        add_theme_support( 'responsive-embeds');
-        add_theme_support( 'editor-styles');
-        add_theme_support( 'html5', array( 'style','script' ) );
-        add_theme_support( 'automatic-feed-links');
+    function mythemefucntions(){
+        add_theme_support('post-thumbnails');
     }
+
+
+
+
+    function change_featured_image_text( $content ) {
+        return $content = str_replace( __( 'Set featured image' ), __( 'hadi tor image change kor' ), $content);
+    }
+    add_filter( 'admin_post_thumbnail_html', 'change_featured_image_text' );
+
 }
 
 
-
-
-
-add_action( 'after_setup_theme', 'mytheeme');
-
-
+add_action('after_setup_theme','mythemefucntions');
 
 ?>
