@@ -77,6 +77,48 @@
     <div class="container-fluid mb-4">
         <div class="row bg-light p-md-5">
 <?php 
+
+
+$name="hadi";
+$cell="0174668686868";
+$email="hadijaman";
+
+$personinfo = array("hadi","0174668686868","hadijaman");
+
+
+//echo $personinfo[1];
+
+
+// indexing 
+// associtive 
+// multidimentional
+
+// $info = array('d',2115,"hadi",25000);
+
+// echo count($info);
+
+// echo $info[2];
+// key = value 
+
+// key => value 
+
+$perfoninfo = array(
+
+  'key' => "value",
+  'name' => "hadijaman",
+  'chiildinfo' =>array(
+    'c_name' => "rowza"
+  )
+);
+
+echo $perfoninfo['key'];
+
+
+
+
+if(have_posts()):
+
+
 while(have_posts()): the_post();
 ?>
 <div class="col-md-4 mb-3">
@@ -107,6 +149,9 @@ while(have_posts()): the_post();
 <?php
 endwhile;
 
+else:
+  echo "post nai";
+endif
 ?>
 
 
